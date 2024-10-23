@@ -1,219 +1,257 @@
-* {
-    box-sizing: border-box;
+/* styles.css */
+:root {
+    --brand-color: #0E459A; /* Brand color */
+    --yellow-color: #FBDE4D; /* Yellow color */
+    --body-color: #e9faff; /* Body color */
+}
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f2fffe;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
+header {
+    position: relative;
+    padding: 0; /* Remove padding to minimize height */
+    /* background-color: var(--body-color) */
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
+    position: absolute;
+    left: 20px; /* Position logo outside the blue box */
+    top: 10px; /* Adjust as needed */
+    z-index: 10; /* Ensure logo is above the container */
+}
+
+.container {
+    background-color: var(--brand-color); /* Dark blue background */
+    display: flex;
+    justify-content: space-between; /* Space between nav items and button */
+    align-items: center; /* Center items vertically */
+    max-width: 800px; /* Width of the blue box */
+    margin: 0 auto; /* Center the container */
+    padding: 20px 30px; /* Increased padding for better spacing */
+    height: 50px; /* Set a specific height for the container */
+    position: relative;
+    overflow: hidden; /* Hide overflow for the curved effect */
+    border-radius: 70% 70% 70% 70% / 0% 0% 100% 100%; /* Add bottom curve */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Position at the top of the container */
+    left: -30px; /* Adjust to stretch the line further out of the container */
+    width: calc(100% + 60px); /* Stretch across the entire width plus extra */
+    height: 2px; /* Height of the line */
+    background-color: var(--brand-color); /* Blue color for the line */
+    z-index: 5; /* Ensure it is above the container background */
+}
+
+/* Create the left curve */
+.container::after {
+    content: '';
+    position: absolute;
+    top: -20px; /* Adjust to position the curve higher */
+    left: -50px; /* Adjust to position the curve */
+    width: 100px; /* Width of the curve */
+    height: 100px; /* Height of the curve */
+    background-color: var(--brand-color); /* Match the navbar color */
+    border-radius: 100px; /* Create a circular curve */
+}
+
+/* Create the right curve */
+.container::after {
+    content: '';
+    position: absolute;
+    top: -20px; /* Adjust to position the curve higher */
+    right: -50px; /* Adjust to position the curve */
+    width: 10px; /* Width of the curve */
+    height: 100px; /* Height of the curve */
+    background-color: #003366; /* Match the navbar color */
+    border-radius: 100px; /* Create a circular curve */
+}
+
+nav {
+    flex-grow: 1; /* Allow nav to take available space */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the nav items */
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: space-between;
-}
-
-nav li {
-    margin-right: 20px;
+    gap: 40px; /* Increased gap for better spacing */
+    justify-content: center; /* Center the list items */
+    align-items: center;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 nav a {
-    color: #333;
+    color: white; /* White text */
     text-decoration: none;
+    font-size: 18px; /* Slightly larger font size */
+    justify-content: center;
+    align-items: center;
 }
 
-nav a:hover {
-    color: #666;
-}
-
-.hero {
-    background-image: linear-gradient(to bottom, #333, #666);
-    background-size: 100% 300px;
-    background-position: 0% 100%;
-    transition: background-position 0.5s ease-out;
-}
-
-.hero h1 {
-    font-size: 48px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.hero h2 {
-    font-size: 24px;
-    color: #fff;
-    margin-bottom: 40px;
-}
-
-.hero p {
- font-size: 18px;
-    color: #fff;
-    margin-bottom: 60px;
-}
-
-.hero .btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
+.navbtn {
+    position: absolute; /* Position the button absolutely */
+    right: 20px; /* Adjust as needed */
+    top: 10px; /* Adjust as needed */
+    background-color: var(--yellow-color); /* Yellow button */
+    color: black;
     padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 45px;
+    border: black solid 1px;
+    transition: background-color 0.3s;
+    z-index: 10; /* Ensure it is above other elements */
 }
 
-.hero .btn:hover {
-    background-color: #666;
+.navbtn:hover {
+    background-color: #e0b90f; /* Darker yellow on hover */
 }
 
-.project-done {
+/* Hero section styles */
+.hero {
     display: flex;
     align-items: center;
-    margin-top: 40px;
-}
-
-.project-done p {
-    font-size: 18px;
-    color: #fff;
-    margin-right: 20px;
-}
-
-.project-done span {
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-}
-
-.about {
-    background-color: #f7f7f7;
-    padding: 40px;
-}
-
-.about-text {
-    width: 50%;
-    margin-right: 40px;
-}
-
-.about-image {
-    width: 50%;
-}
-
-.services {
-    background-color: #fff;
-    padding: 40px;
-}
-
-.services ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    padding: 20px; /* Adjust padding as needed */
+    /* background-color: #ffffff; */
+    height: 90vh; /* Adjust height as needed */
+    position: relative; /* Required for absolute positioning of child elements */
 }
 
-.services li {
-    width: 30%;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+.hero-background {
+    position: absolute; /* Position the background image absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Send background to the back */
 }
 
-.services img {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+.eclipse-image {
+    width: 90%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.services h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.hero-content {
+    max-width: 600px;
+    padding-left: 40px; /* Add left padding */
+    position: relative; /* Position relative to allow z-index */
+    z-index: 2; /* Bring content above the background */
 }
 
-.testimonials {
-    background-color: #f7f7f7;
-    padding: 40px;
+.hero-content h1 {
+    font-size: 50px; /* Adjust font size */
+    margin: 0 0 20px 0; /* Add bottom margin for spacing */
+    color: var(--brand-color); /* Set the color to brand color */
 }
 
-.testimonials ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.highlight {
+    background-color: var(--yellow-color); /* Highlight color */
+    padding: 0 5px;
+    color: black;
+    display: inline-block; /* Ensure it behaves like a block for transformations */
+    transform: rotate(-3deg); /* Rotate the container */
+    transform-origin: center; /* Set the origin for the rotation */
+    text-align: center; /* Center the text */
+}
+
+.highlight span {
+    display: inline-block; /* Ensure the text is treated as a block */
+    transform: rotate(3deg); /* Counteract the rotation */
+}
+
+.hero-content h2 {
+    font-size: 25px; /* Adjust font size */
+    margin: 20px 0; /* Add margin for spacing */
+    font-weight: 500; /* Set to regular */
+    /* text-align: center; Center the text */
+}
+
+.hero-content p {
+    font-size: 25px; /* Adjust font size */
+    margin: 20px 0; /* Add margin for spacing */
+    text-wrap: balance;
+}
+
+.hero-image {
+    position: relative; /* Position the lady image and icons absolutely */
+    z-index: 3; /* Bring lady image above the background */
+    display: flex; /* Added to center the icons */
+    justify-content: center; /* Center the icons horizontally */
+}
+
+
+
+.icons {
+    position: absolute; /* Position icons absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 20px; /* Space between icons */
 }
 
-.testimonials li {
-    width: 30%;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+/* Specific styles for each icon */
+.marks-icon {
+    width: 50px; /* Adjust size of Marks icon */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.testimonials img {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+.lady-icon {
+    width: 150px; /* Adjust size of Lady icon */
+    height: 80px; /* Maintain aspect ratio */
+    position: absolute; /* Position it absolutely */
+    top: 30%; /* Adjust this value to position it vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the icon */
+    z-index: 4; /* Ensure it is above the background */
 }
 
-.testimonials h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.yellowbox-icon {
+    width: 50px; /* Adjust size of Yellow Box icon */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.contact {
-    background-color: #fff;
-    padding: 40px;
+.icon {
+    width: 50px; /* Adjust size of icons */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.contact form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ddd;
-}
-
-.contact button[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
+.btn {
+    background-color: var(--brand-color); /* Button color */
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    height: 30px;
+    transition: background-color 0.3s;
+    margin-top: 40px; /* Add margin to separate from the paragraph */
+    display: inline-flex; /* Use inline-flex for centering */
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    text-align: center; /* Ensure text is centered */
 }
 
-.contact button[type="submit"]:hover {
-    background-color: #666;
+.btn:hover {
+    background-color: #e0b90f; /* Darker yellow on hover */
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center; /* Center text on smaller screens */
+    }
+    .icons {
+        flex-direction: row; /* Change icon layout if needed */
+    }
 }
