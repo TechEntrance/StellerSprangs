@@ -1,3 +1,10 @@
+/* styles.css */
+:root {
+  --brand-color: #0E459A; /* Brand color */
+  --yellow-color: #FBDE4D; /* Yellow color */
+  --body-color: #e9faff; /* Body color */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,50 +17,110 @@ body {
     width: 100%
 }
 
-/* Navbar Section */
 header {
-    background-color: #1A73E8;
-    padding: 20px 50px;
-  
-    display: flex;
-    justify-content: center;
+  position: relative;
+  padding: 0; /* Remove padding to minimize height */
+  /* background-color: var(--body-color) */
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-   
+.logo {
+  position: absolute;
+  left: 20px; /* Position logo outside the blue box */
+  top: 10px; /* Adjust as needed */
+  z-index: 10; /* Ensure logo is above the container */
 }
 
-.navbar .logo img {
-    width: 120px;
+.container {
+  background-color: var(--brand-color); /* Dark blue background */
+  display: flex;
+  justify-content: space-between; /* Space between nav items and button */
+  align-items: center; /* Center items vertically */
+  max-width: 800px; /* Width of the blue box */
+  margin: 0 auto; /* Center the container */
+  padding: 20px 30px; /* Increased padding for better spacing */
+  height: 80px; /* Set a specific height for the container */
+  position: relative;
+  overflow: hidden; /* Hide overflow for the curved effect */
+  border-radius: 70% 70% 70% 70% / 0% 0% 100% 100%; /* Add bottom curve */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
-.navbar nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0; /* Position at the top of the container */
+  left: -30px; /* Adjust to stretch the line further out of the container */
+  width: calc(100% + 60px); /* Stretch across the entire width plus extra */
+  height: 2px; /* Height of the line */
+  background-color: var(--brand-color); /* Blue color for the line */
+  z-index: 5; /* Ensure it is above the container background */
 }
 
-.navbar nav ul li a {
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: bold;
+/* Create the left curve */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -20px; /* Adjust to position the curve higher */
+  left: -50px; /* Adjust to position the curve */
+  width: 100px; /* Width of the curve */
+  height: 100px; /* Height of the curve */
+  background-color: var(--brand-color); /* Match the navbar color */
+  border-radius: 100px; /* Create a circular curve */
 }
 
-.navbar .cta-button {
-    background-color: #FFD839;
-    color: #1A73E8;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
+/* Create the right curve */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -20px; /* Adjust to position the curve higher */
+  right: -50px; /* Adjust to position the curve */
+  width: 10px; /* Width of the curve */
+  height: 100px; /* Height of the curve */
+  background-color: #003366; /* Match the navbar color */
+  border-radius: 100px; /* Create a circular curve */
 }
 
+nav {
+  flex-grow: 1; /* Allow nav to take available space */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center the nav items */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px; /* Increased gap for better spacing */
+  justify-content: center; /* Center the list items */
+  align-items: center;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+nav a {
+  color: white; /* White text */
+  text-decoration: none;
+  font-size: 18px; /* Slightly larger font size */
+  justify-content: center;
+  align-items: center;
+}
+
+.navbtn {
+  position: absolute; /* Position the button absolutely */
+  right: 20px; /* Adjust as needed */
+  top: 10px; /* Adjust as needed */
+  background-color: var(--yellow-color); /* Yellow button */
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 45px;
+  border: black solid 1px;
+  transition: background-color 0.3s;
+  z-index: 10; /* Ensure it is above other elements */
+}
+
+.navbtn:hover {
+  background-color: #e0b90f; /* Darker yellow on hover */
+}
 .main-section {
     width: 100%;
     height: 100vh;
@@ -79,7 +146,7 @@ header {
 .hero-section .content {
     z-index: 2; 
     text-align: left;
-    color: #31009c;
+    color: var(--brand-color);
     max-width: 600px;
 }
 
@@ -88,9 +155,25 @@ header {
 }
 
 .hero-section h1 span {
-    background-color: #FFD839;
+    background-color: var(--yellow-color);
     padding: 5px;
     border-radius: 5px;
+}
+/*  */
+
+.highlight {
+  background-color: var(--yellow-color); /* Highlight color */
+  padding: 0 5px;
+  color: black;
+  display: inline-block; /* Ensure it behaves like a block for transformations */
+  transform: rotate(-3deg); /* Rotate the container */
+  transform-origin: center; /* Set the origin for the rotation */
+  text-align: center; /* Center the text */
+}
+
+.highlight span {
+  display: inline-block; /* Ensure the text is treated as a block */
+  transform: rotate(3deg); /* Counteract the rotation */
 }
 
 .hero-section .subtitle {
@@ -109,7 +192,7 @@ header {
     display: inline-block;
     margin-top: 30px;
     padding: 12px 25px;
-    background-color: #31009c;
+    background-color: var(--brand-color);
     color: #fbfbfb;
     text-decoration: none;
     border-radius: 50px;
@@ -200,6 +283,9 @@ header {
   
   .text-content {
     max-width: 600px;
+    padding-left: 40px; /* Add left padding */
+    position: relative; /* Position relative to allow z-index */
+    z-index: 2; /* Bring content above the background */
   }
   
   .text-content h2 {
@@ -209,10 +295,9 @@ header {
   }
   
   .text-content h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #252525;
-    margin-bottom: 1.7rem;
+    font-size: 50px; /* Adjust font size */
+    margin: 0 0 20px 0; /* Add bottom margin for spacing */
+    color: var(--brand-color); /* Set the color to brand color */
   }
   
   .highlight-text {
@@ -650,6 +735,7 @@ body {
     border-radius: 50px;
     text-align: center;
     color: white;
+    margin: 20px;
     margin-bottom: 50px;
 }
 
@@ -785,11 +871,13 @@ footer {
 
 .information, .contact-us {
     width: 45%;
+    text-wrap: balance;
 }
 
 .information h3, .contact-us h3 {
     font-size: 24px;
     font-weight: bold;
+    text-wrap: balance;
     margin-bottom: 20px;
 }
 
@@ -863,3 +951,5 @@ footer {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
+/* Reponsive css */
