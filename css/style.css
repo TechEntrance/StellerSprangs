@@ -1,8 +1,11 @@
 /* styles.css */
 :root {
-  --brand-color: #0E459A; /* Brand color */
-  --yellow-color: #FBDE4D; /* Yellow color */
-  --body-color: #e9faff; /* Body color */
+    --brand-color: #0E459A;
+    /* Brand color */
+    --yellow-color: #FBDE4D;
+    /* Yellow color */
+    --body-color: #e9faff;
+    /* Body color */
 }
 
 * {
@@ -18,114 +21,157 @@ body {
 }
 
 header {
-  position: relative;
-  padding: 0; /* Remove padding to minimize height */
-  /* background-color: var(--body-color) */
+    position: relative;
+    padding: 0;
+    /* background-color: var(--body-color) */
 }
 
-.logo{
-  position: absolute;
-  left: 20px; /* Position logo outside the blue box */
-  top: 10px; /* Adjust as needed */
-  z-index: 10; /* Ensure logo is above the container */
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    z-index: 10;
 }
 
-.logo img{
-  width: 120px;
+.logo img {
+    width: 120px;
 }
 
 
 .container {
-  background-color: var(--brand-color); /* Dark blue background */
-  display: flex;
-  justify-content: space-between; /* Space between nav items and button */
-  align-items: center; /* Center items vertically */
-  max-width: 800px; /* Width of the blue box */
-  margin: 0 auto; /* Center the container */
-  padding: 20px 30px; /* Increased padding for better spacing */
-  height: 80px; /* Set a specific height for the container */
-  position: relative;
-  overflow: hidden; /* Hide overflow for the curved effect */
-  border-radius: 70% 70% 70% 70% / 0% 0% 100% 100%; /* Add bottom curve */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: var(--brand-color);
+    display: flex;
+    justify-content: space-between;
+    /* Space between nav items and button */
+    align-items: center;
+    /* Center items vertically */
+    max-width: 800px;
+    /* Width of the blue box */
+    margin: 0 auto;
+    /* Center the container */
+    padding: 20px 30px;
+    /* Increased padding for better spacing */
+    height: 80px;
+    /* Set a specific height for the container */
+    position: relative;
+    overflow: hidden;
+    /* Hide overflow for the curved effect */
+    border-radius: 70% 70% 70% 70% / 0% 0% 100% 100%;
+    /* Add bottom curve */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle shadow */
 }
 
 .container::before {
-  content: '';
-  position: absolute;
-  top: 0; /* Position at the top of the container */
-  left: -30px; /* Adjust to stretch the line further out of the container */
-  width: calc(100% + 60px); /* Stretch across the entire width plus extra */
-  height: 2px; /* Height of the line */
-  background-color: var(--brand-color); /* Blue color for the line */
-  z-index: 5; /* Ensure it is above the container background */
+    content: '';
+    position: absolute;
+    top: 0;
+    /* Position at the top of the container */
+    left: -30px;
+    /* Adjust to stretch the line further out of the container */
+    width: calc(100% + 60px);
+    /* Stretch across the entire width plus extra */
+    height: 2px;
+    /* Height of the line */
+    background-color: var(--brand-color);
+    /* Blue color for the line */
+    z-index: 5;
+    /* Ensure it is above the container background */
 }
 
 /* Create the left curve */
 .container::after {
-  content: '';
-  position: absolute;
-  top: -20px; /* Adjust to position the curve higher */
-  left: -50px; /* Adjust to position the curve */
-  width: 100px; /* Width of the curve */
-  height: 100px; /* Height of the curve */
-  background-color: var(--brand-color); /* Match the navbar color */
-  border-radius: 100px; /* Create a circular curve */
+    content: '';
+    position: absolute;
+    top: -20px;
+    /* Adjust to position the curve higher */
+    left: -50px;
+    /* Adjust to position the curve */
+    width: 100px;
+    /* Width of the curve */
+    height: 100px;
+    /* Height of the curve */
+    background-color: var(--brand-color);
+    /* Match the navbar color */
+    border-radius: 100px;
+    /* Create a circular curve */
 }
 
 /* Create the right curve */
 .container::after {
-  content: '';
-  position: absolute;
-  top: -20px; /* Adjust to position the curve higher */
-  right: -50px; /* Adjust to position the curve */
-  width: 10px; /* Width of the curve */
-  height: 100px; /* Height of the curve */
-  background-color: #003366; /* Match the navbar color */
-  border-radius: 100px; /* Create a circular curve */
+    content: '';
+    position: absolute;
+    top: -20px;
+    /* Adjust to position the curve higher */
+    right: -50px;
+    /* Adjust to position the curve */
+    width: 10px;
+    /* Width of the curve */
+    height: 100px;
+    /* Height of the curve */
+    background-color: #003366;
+    /* Match the navbar color */
+    border-radius: 100px;
+    /* Create a circular curve */
 }
 
 nav {
-  flex-grow: 1; /* Allow nav to take available space */
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center the nav items */
+    flex-grow: 1;
+    /* Allow nav to take available space */
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: center;
+    /* Center the nav items */
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 40px; /* Increased gap for better spacing */
-  justify-content: center; /* Center the list items */
-  align-items: center;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    /* Increased gap for better spacing */
+    justify-content: center;
+    /* Center the list items */
+    align-items: center;
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
 }
 
 nav a {
-  color: white; /* White text */
-  text-decoration: none;
-  font-size: 18px; /* Slightly larger font size */
-  justify-content: center;
-  align-items: center;
+    color: white;
+    /* White text */
+    text-decoration: none;
+    font-size: 18px;
+    /* Slightly larger font size */
+    justify-content: center;
+    align-items: center;
 }
 
 .navbtn {
-  position: absolute; /* Position the button absolutely */
-  right: 20px; /* Adjust as needed */
-  top: 10px; /* Adjust as needed */
-  background-color: var(--yellow-color); /* Yellow button */
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 45px;
-  border: black solid 1px;
-  transition: background-color 0.3s;
-  z-index: 10; /* Ensure it is above other elements */
+    position: absolute;
+    /* Position the button absolutely */
+    right: 20px;
+    /* Adjust as needed */
+    top: 10px;
+    /* Adjust as needed */
+    background-color: var(--yellow-color);
+    /* Yellow button */
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 45px;
+    border: black solid 1px;
+    transition: background-color 0.3s;
+    z-index: 10;
+    /* Ensure it is above other elements */
 }
 
 .navbtn:hover {
-  background-color: #e0b90f; /* Darker yellow on hover */
+    background-color: #e0b90f;
+    /* Darker yellow on hover */
 }
+
 .main-section {
     width: 100%;
     height: 100vh;
@@ -135,21 +181,21 @@ nav a {
 .hero-section {
     position: relative;
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
     padding: 0px 80px;
-    background-image: url('../contents/Agencyy.jpg'); 
+    background-image: url('../contents/Agencyy.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 103.7vh; 
-    overflow: hidden; 
+    height: 103.7vh;
+    overflow: hidden;
 }
 
 
 .hero-section .content {
-    z-index: 2; 
+    z-index: 2;
     text-align: left;
     color: var(--brand-color);
     max-width: 600px;
@@ -164,21 +210,29 @@ nav a {
     padding: 5px;
     border-radius: 5px;
 }
+
 /*  */
 
 .highlight {
-  background-color: var(--yellow-color); /* Highlight color */
-  padding: 0 5px;
-  color: black;
-  display: inline-block; /* Ensure it behaves like a block for transformations */
-  transform: rotate(-3deg); /* Rotate the container */
-  transform-origin: center; /* Set the origin for the rotation */
-  text-align: center; /* Center the text */
+    background-color: var(--yellow-color);
+    /* Highlight color */
+    padding: 0 5px;
+    color: black;
+    display: inline-block;
+    /* Ensure it behaves like a block for transformations */
+    transform: rotate(-3deg);
+    /* Rotate the container */
+    transform-origin: center;
+    /* Set the origin for the rotation */
+    text-align: center;
+    /* Center the text */
 }
 
 .highlight span {
-  display: inline-block; /* Ensure the text is treated as a block */
-  transform: rotate(3deg); /* Counteract the rotation */
+    display: inline-block;
+    /* Ensure the text is treated as a block */
+    transform: rotate(3deg);
+    /* Counteract the rotation */
 }
 
 .hero-section .subtitle {
@@ -210,111 +264,114 @@ nav a {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
+}
 
-  .full-containers {
+body {
+    font-family: Arial, sans-serif;
+}
+
+.full-containers {
     width: 100%;
     background-color: rgb(255, 252, 252);
-  }
-  
-  .about-section {
+}
+
+.about-section {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    gap: 3rem; 
+    gap: 3rem;
     flex-wrap: wrap;
-   
-  }
-  
-  .image-container {
+
+}
+
+.image-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-  }
-  
- 
-  .image1 {
+}
+
+
+.image1 {
     width: 150px;
     height: 290px;
-    border-radius: 50% /25%; 
-  }
-  
-  .image2 {
+    border-radius: 50% /25%;
+}
+
+.image2 {
     margin-left: 20px;
     width: 160px;
     height: 160px;
-    border-radius:50%; 
-  }
-  
-  .image3 {
+    border-radius: 50%;
+}
+
+.image3 {
     margin-top: 60px;
     width: 150px;
     height: 290px;
     border-radius: 50%/25%;
-  }
-  
-  .image4 {
+}
+
+.image4 {
     margin-top: -60px;
     width: 160px;
     height: 160px;
     border-radius: 50%;
-  }
-  
-  .image5 {
+}
+
+.image5 {
     margin-top: -190px;
     width: 150px;
     height: 290px;
-    border-radius: 50% / 25%; 
-  }
-  
-  .image-circle {
+    border-radius: 50% / 25%;
+}
+
+.image-circle {
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-  }
-  
-  .image-circle img {
+}
+
+.image-circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .text-content {
+}
+
+.text-content {
     max-width: 600px;
-    position: relative; 
-    z-index: 2; 
-  }
-  
-  .text-content h2 {
+    position: relative;
+    z-index: 2;
+}
+
+.text-content h2 {
     font-size: 1.5rem;
     color: #5c5b5b;
     margin-bottom: 0.7rem;
-  }
-  
-  .text-content h1 {
-    font-size: 50px; /* Adjust font size */
-    margin: 0 0 20px 0; /* Add bottom margin for spacing */
-    color: var(--brand-color); /* Set the color to brand color */
-  }
-  
-  .highlight-text {
+}
+
+.text-content h1 {
+    font-size: 50px;
+    /* Adjust font size */
+    margin: 0 0 20px 0;
+    /* Add bottom margin for spacing */
+    color: var(--brand-color);
+    /* Set the color to brand color */
+}
+
+.highlight-text {
     color: #2663FF;
-  }
-  
-  .text-content p {
+}
+
+.text-content p {
     color: #666;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-  }
-  
-  .know-more-button {
+}
+
+.know-more-button {
     padding: 0.5rem 1.5rem;
     background-color: #2663FF;
     color: #fff;
@@ -322,179 +379,179 @@ nav a {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .know-more-button:hover {
+}
+
+.know-more-button:hover {
     background-color: #1c4fb5;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .about-section {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
     }
-    
+
     .image-container {
-      grid-template-columns: repeat(2, 1fr);
-      margin-right: 0;
-      margin-bottom: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 0;
+        margin-bottom: 1.5rem;
     }
-  }
-  
-  @media (max-width: 376px) {
+}
+
+@media (max-width: 376px) {
 
 
     .image-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.7rem;
-      }
-    
+    }
+
     .image1 {
-        
+
         width: 80px;
         height: 180px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image3 {
+    .image3 {
         margin-top: 45px;
         width: 80px;
         height: 180px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image5 {
+    .image5 {
         margin-top: -140px;
         width: 80px;
         height: 180px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image2 {
+    .image2 {
         margin-left: 5px;
         width: 80px;
         height: 80px;
         border-radius: 50%;
-      }
+    }
 
-      .image4 {
+    .image4 {
         margin-top: -40px;
         width: 80px;
         height: 80px;
         border-radius: 50%;
-      }
-  }
+    }
+}
 
-  @media (min-width:376px) and (max-width: 480px) {
+@media (min-width:376px) and (max-width: 480px) {
 
 
     .image-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.9rem;
-      }
-    
+    }
+
     .image1 {
-        
+
         width: 100px;
         height: 200px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image3 {
+    .image3 {
         margin-top: 45px;
         width: 100px;
         height: 200px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image5 {
+    .image5 {
         margin-top: -140px;
         width: 100px;
         height: 200px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image2 {
+    .image2 {
         margin-left: 5px;
         width: 100px;
         height: 100px;
-        border-radius: 50%; 
-      }
+        border-radius: 50%;
+    }
 
-      .image4 {
+    .image4 {
         margin-top: -40px;
         width: 100px;
         height: 100px;
-        border-radius: 50%; 
-      }
-  }
+        border-radius: 50%;
+    }
+}
 
-  @media (min-width:480px) and (max-width: 768px) {
+@media (min-width:480px) and (max-width: 768px) {
 
 
     .image-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
-      }
-    
+    }
+
     .image1 {
-        
+
         width: 140px;
         height: 240px;
         border-radius: 50% /25%;
-      }
+    }
 
-      .image3 {
+    .image3 {
         margin-top: 45px;
         width: 140px;
         height: 240px;
         border-radius: 50% /25%;
-      }
+    }
 
-      .image5 {
+    .image5 {
         margin-top: -140px;
         width: 140px;
         height: 240px;
-        border-radius: 50% /25%; 
-      }
+        border-radius: 50% /25%;
+    }
 
-      .image2 {
+    .image2 {
         margin-left: 5px;
         width: 140px;
         height: 140px;
-        border-radius: 50%; 
-      }
+        border-radius: 50%;
+    }
 
-      .image4 {
+    .image4 {
         margin-top: -40px;
         width: 140px;
         height: 140px;
-        border-radius: 50%; 
-      }
+        border-radius: 50%;
+    }
 
-      
 
-      .text-content h2 {
+
+    .text-content h2 {
         font-size: 35px;
-      }
+    }
 
-      .text-content h1 {
+    .text-content h1 {
         font-size: 45px;
-      }
+    }
 
-      .text-content p {
+    .text-content p {
         font-size: 19px;
-      }
-  }
+    }
+}
 
 
-  @media (min-width:769px) and (max-width:950px) {
+@media (min-width:769px) and (max-width:950px) {
     .text-content {
         width: 100%;
         text-align: center;
@@ -502,23 +559,23 @@ nav a {
 
     .text-content h2 {
         font-size: 35px;
-      }
+    }
 
-      .text-content h1 {
+    .text-content h1 {
         font-size: 45px;
-      }
+    }
 
-      .text-content p {
+    .text-content p {
         font-size: 19px;
-      }
-  }
+    }
+}
 
-  @media (min-width:950px) and (max-width:1280px) {
+@media (min-width:950px) and (max-width:1280px) {
     .text-content {
         max-width: 400px;
     }
-  }
-  
+}
+
 
 
 
@@ -537,7 +594,7 @@ body {
     text-align: center;
     padding: 80px 0;
     background-color: #ffffff;
-    min-height: 90vh; 
+    min-height: 90vh;
 }
 
 .services-section h2 {
@@ -547,7 +604,7 @@ body {
 }
 
 .services-section h2 span {
-    color: #1A73E8; 
+    color: #1A73E8;
 }
 
 .services-container {
@@ -555,12 +612,12 @@ body {
     justify-content: center;
     gap: 80px;
     margin-top: 60px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .service-box {
-    width: 300px; 
-    border: 3.5px solid #000000; 
+    width: 300px;
+    border: 3.5px solid #000000;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -570,7 +627,7 @@ body {
 }
 
 .service-box:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .service-image {
@@ -579,9 +636,9 @@ body {
 
 .service-image img {
     width: 90%;
-    height: 300px; 
+    height: 300px;
     object-fit: contain;
-    filter: brightness(50%); 
+    filter: brightness(50%);
 }
 
 .service-image .overlay {
@@ -590,13 +647,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(44, 43, 43, 0.3); 
+    background-color: rgba(44, 43, 43, 0.3);
 }
 
 .service-box h3 {
-    font-size: 30px; 
+    font-size: 30px;
     font-weight: 600;
-    color: #fff; 
+    color: #fff;
     position: absolute;
     top: 120px;
     left: 50%;
@@ -605,7 +662,7 @@ body {
 
 .read-more-btn {
     border: 2px solid white;
-    padding: 12px 25px; 
+    padding: 12px 25px;
     color: white;
     background-color: transparent;
     border-radius: 25px;
@@ -649,7 +706,7 @@ body {
 }
 
 .why-choose-us h2 span {
-    color: #1A73E8; 
+    color: #1A73E8;
 }
 
 .why-choose-us p {
@@ -666,8 +723,8 @@ body {
 }
 
 .feature-box {
-    background-color: #F7F8FA; 
-    width: 300px; 
+    background-color: #F7F8FA;
+    width: 300px;
     padding: 30px;
     margin: 20px;
     border-radius: 10px;
@@ -677,7 +734,7 @@ body {
 
 .feature-box i.icon {
     font-size: 36px;
-    color: #000; 
+    color: #000;
 }
 
 .feature-box h3 {
@@ -693,10 +750,10 @@ body {
 
 
 .features {
-    max-width: 960px; 
+    max-width: 960px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
 
@@ -709,14 +766,14 @@ body {
 }
 
 .logos img {
-    width: 100px; 
+    width: 100px;
     height: 80px;
     filter: grayscale(0%);
     transition: filter 0.3s;
 }
 
 .logos img:hover {
-    filter: grayscale(0); 
+    filter: grayscale(0);
 }
 
 
@@ -901,12 +958,14 @@ footer {
     border-bottom: 1px solid #333;
 }
 
-.information, .contact-us {
+.information,
+.contact-us {
     width: 45%;
     text-wrap: balance;
 }
 
-.information h3, .contact-us h3 {
+.information h3,
+.contact-us h3 {
     font-size: 24px;
     font-weight: bold;
     text-wrap: balance;
@@ -993,7 +1052,8 @@ footer {
         gap: 40px;
     }
 
-    .information, .contact-us {
+    .information,
+    .contact-us {
         width: 100%;
     }
 
@@ -1019,7 +1079,8 @@ footer {
         gap: 30px;
     }
 
-    .information, .contact-us {
+    .information,
+    .contact-us {
         width: 48%;
     }
 }
@@ -1029,11 +1090,13 @@ footer {
         padding: 20px;
     }
 
-    .information h3, .contact-us h3 {
+    .information h3,
+    .contact-us h3 {
         font-size: 20px;
     }
 
-    .information p, .contact-us ul {
+    .information p,
+    .contact-us ul {
         font-size: 14px;
     }
 
@@ -1042,7 +1105,8 @@ footer {
         height: 30px;
     }
 
-    .footer-bottom p, .footer-links a {
+    .footer-bottom p,
+    .footer-links a {
         font-size: 12px;
     }
 }
@@ -1101,7 +1165,8 @@ footer {
 /* Add these media queries for responsiveness */
 @media (max-width: 1024px) {
     .features {
-        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+        /* Change to 2 columns */
         max-width: 700px;
         padding: 0 20px;
     }
@@ -1121,7 +1186,7 @@ footer {
         font-size: 28px;
     }
 
-    .why-choose-us > p {
+    .why-choose-us>p {
         font-size: 16px;
         padding: 0 15px;
     }
@@ -1152,7 +1217,8 @@ footer {
 
 @media (max-width: 480px) {
     .features {
-        grid-template-columns: 1fr; /* Change to single column */
+        grid-template-columns: 1fr;
+        /* Change to single column */
         gap: 15px;
     }
 
@@ -1207,18 +1273,21 @@ footer {
     height: auto;
     object-fit: contain;
     /* Remove grayscale filter to show original colors */
-    filter: none; 
-    transition: transform 0.3s ease; /* Add transition for hover effect */
+    filter: none;
+    transition: transform 0.3s ease;
+    /* Add transition for hover effect */
 }
 
 .logos img:hover {
-    transform: scale(1.1); /* Add slight zoom effect on hover */
+    transform: scale(1.1);
+    /* Add slight zoom effect on hover */
 }
 
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -1234,7 +1303,7 @@ footer {
     .logos img {
         width: 100px;
     }
-    
+
     .logos {
         gap: 30px;
     }
@@ -1244,13 +1313,14 @@ footer {
     .logos img {
         width: 80px;
     }
-    
+
     .logos {
         gap: 20px;
     }
-    
+
     .logos-scroll {
-        animation-duration: 15s; /* Faster animation for mobile */
+        animation-duration: 15s;
+        /* Faster animation for mobile */
     }
 }
 
@@ -1258,14 +1328,15 @@ footer {
     .logos img {
         width: 60px;
     }
-    
+
     .logos {
         gap: 15px;
         padding: 0 10px;
     }
-    
+
     .logos-scroll {
-        animation-duration: 10s; /* Even faster for smaller screens */
+        animation-duration: 10s;
+        /* Even faster for smaller screens */
     }
 }
 
