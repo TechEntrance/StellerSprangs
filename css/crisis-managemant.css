@@ -5,6 +5,7 @@
     padding: 50px;
     background-color: #f7f8fc;
     background: none;
+    height: 500px;
 }
 
 .hero-section .content {
@@ -22,6 +23,7 @@
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: #000;
 }
 
 .hero-section .read-more-btn {
@@ -51,9 +53,27 @@
 
 .steps-section h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.steps-section h2 .blue-text {
     color: #0e459a;
-    margin-bottom: 30px;
+}
+
+.steps-section h2 .black-text {
+    color: #000;
+}
+
+.steps-section h2::before,
+.steps-section h2::after {
+    content: none;
 }
 
 .steps-container {
@@ -213,8 +233,8 @@
 }
 
 .benefit-icon {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 10px;
 }
 
