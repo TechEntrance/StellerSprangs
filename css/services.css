@@ -7,8 +7,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #F7F8FC;
 }
+
+
 
 .services-main-container {
     display: flex;
@@ -22,19 +24,19 @@ body {
 }
 
 .services-title {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
 .services-subtitle {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     margin-bottom: 40px;
 }
 
 .services-footer-text {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -61,15 +63,15 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .services-title {
-        font-size: 50px;
+        font-size: 38px;
     }
 
     .services-subtitle {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .services-footer-text {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .services-image-container {
@@ -81,6 +83,10 @@ body {
     .services-main-container {
         flex-direction: column;
         padding: 20px;
+    }
+
+    .container{
+        background-color: white;
     }
 
     .services-text-section {
