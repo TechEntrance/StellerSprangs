@@ -20,3 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function handleScrollAnimations() {
+    const elements = document.querySelectorAll('.animate-on-scroll, .animate-feature');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', handleScrollAnimations);
