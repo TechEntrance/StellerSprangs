@@ -59,8 +59,8 @@
 }
 
 .image-content img {
-    width: 100%;
-    max-width: 500px;
+    width: 85%;
+    max-width: 440px;
     border-radius: 60px 40px 60px 10px;
 }
 
@@ -216,8 +216,8 @@
 }
 
 .solution-content img {
-    width: 100%;
-    max-width: 500px;
+    width: 85%;
+    max-width: 440px;
     border-radius: 60px 40px 60px 10px;
 }
 

@@ -1107,11 +1107,20 @@ footer {
 
 .footer-links {
     display: flex;
+    align-items: center;
+    gap: 10px; /* Space between items */
 }
 
 .footer-links li {
     list-style: none;
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links li:first-child::after {
+    content: '|';
+    margin-left: 10px;
+    color: #fff;
 }
 
 .footer-links a {
@@ -1140,18 +1149,12 @@ footer {
 
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         text-align: center;
     }
 
     .footer-links {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .footer-links li {
-        margin-left: 0;
+        justify-content: center;
     }
 }
 
