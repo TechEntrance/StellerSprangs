@@ -19,8 +19,10 @@ body {
 }
 
 .services-text-section {
-    flex: 1;
-    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding-right: 40px;
 }
 
 .services-title {
@@ -598,44 +600,175 @@ p {
     gap: 30px;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 
 .service-card {
     width: 300px;
-    height: 300px;
+    height: 350px;
     position: relative;
-    border: 2px solid #FFD700;
     border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: none;
+    padding: 1px;
+    background: linear-gradient(
+        45deg,
+        #0E459A,
+        #6236FF,
+        #FFD700,
+        #0E459A
+    );
+    background-size: 200% 200%;
+    animation: borderGradient 4s ease infinite;
 }
 
+/* Add gradient animation */
+@keyframes borderGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Add inner container for content */
+.service-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Update hover effect */
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    background-size: 150% 150%;
 }
 
-.service-card img {
+/* Move the overlay and content styles to inner container */
+.service-card-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.service-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(14, 69, 154, 0.9),
+        rgba(98, 54, 255, 0.9)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.service-card:hover .service-card-inner::after {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover .service-card-inner::before {
+    opacity: 1;
+}
+
+/* Update image container */
+.service-card-inner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
-}
-
-.card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    text-align: center;
+    transition: transform 0.4s ease;
 }
 
 .service-card h3 {
     color: white;
     font-size: 24px;
     font-weight: bold;
-    margin: 0;
+    margin-bottom: 15px;
+    opacity: 1; /* Make title always visible */
+    transform: translateY(0);
+    transition: all 0.4s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow for better visibility */
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.service-card:hover h3 {
+    opacity: 0; /* Hide the centered title on hover */
+}
+
+.service-card:hover .card-content h3 {
+    opacity: 1;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 15px;
+}
+
+/* Add a read more button */
+.card-content .read-more {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.2s;
+}
+
+.service-card:hover .read-more {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-content .read-more:hover {
+    background-color: white;
+    color: #0E459A;
+}
+
+/* Update the section title styling */
+.all-services-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0E459A;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.all-services-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(to right, #0E459A, #6236FF);
+    border-radius: 2px;
 }
 
 /* Update the buttons styling */
@@ -748,3 +881,163 @@ p {
         margin: 8px auto 0;
     }
 }
+
+/* Update card content styles */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card:hover .card-content {
+    transform: translateY(0);
+}
+
+/* Update title styles */
+.service-card h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    opacity: 1;
+    transition: all 0.4s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Add description text */
+.card-content p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+}
+
+/* Update hover states */
+.service-card:hover .card-content {
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(14, 69, 154, 0.95),
+        rgba(98, 54, 255, 0.95)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card:hover h3 {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 15px;
+}
+
+.service-card:hover .card-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover .read-more {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Update service card and title styles */
+.service-card {
+    /* Keep existing styles */
+    position: relative;
+}
+
+/* Add a permanent title overlay */
+.service-card .permanent-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.4s ease;
+}
+
+/* Update card content styles */
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    text-align: center;
+    opacity: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+    background: linear-gradient(
+        to bottom,
+        rgba(14, 69, 154, 0.95),
+        rgba(98, 54, 255, 0.95)
+    );
+    pointer-events: none;
+}
+
+/* Update hover states */
+.service-card:hover .card-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.service-card:hover .permanent-title {
+    opacity: 0;
+}
+
+/* Keep the rest of your hover effects */
+.card-content h3,
+.card-content p,
+.card-content .read-more {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .card-content h3,
+.service-card:hover .card-content p,
+.service-card:hover .card-content .read-more {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adjust timing for smooth transitions */
+.service-card:hover .card-content h3 { transition-delay: 0.1s; }
+.service-card:hover .card-content p { transition-delay: 0.2s; }
+.service-card:hover .card-content .read-more { transition-delay: 0.3s; }
