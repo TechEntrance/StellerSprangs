@@ -234,6 +234,7 @@
     font-size: 16px;
     line-height: 1.8;
     color: #666;
+    margin-bottom: 20px;
 }
 
 .goals-points {
@@ -243,14 +244,18 @@
 .goals-points ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
 .goals-points li {
     position: relative;
     padding-left: 30px;
-    margin-bottom: 15px;
     font-size: 16px;
     color: #333;
+    display: flex;
+    align-items: center;
 }
 
 .goals-points li::before {
@@ -259,6 +264,7 @@
     left: 0;
     color: #0E459A;
     font-weight: bold;
+    font-size: 18px;
 }
 
 /* Team Section */
@@ -616,4 +622,58 @@
 /* Add smooth scrolling for the entire page */
 html {
     scroll-behavior: smooth;
+}
+
+/* Update responsive styles for Goals section */
+@media (max-width: 991px) {
+    .goals {
+        padding: 30px;
+    }
+
+    .goals-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .goals-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .goals {
+        padding: 25px;
+    }
+
+    .goals h3 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .goals-text p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .goals {
+        padding: 20px;
+    }
+
+    .goals h3 {
+        font-size: 24px;
+    }
+
+    .goals-points ul {
+        grid-template-columns: 1fr;
+    }
+
+    .goals-text p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .goals-points li {
+        font-size: 15px;
+    }
 }
