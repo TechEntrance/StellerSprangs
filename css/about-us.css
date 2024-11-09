@@ -677,3 +677,24 @@ html {
         font-size: 15px;
     }
 }
+
+/* Update the existing media queries for team-section */
+@media (max-width: 768px) {
+    .team-section {
+        padding: 40px 20px; /* Reduced padding for medium screens */
+    }
+    
+    /* ... rest of the existing media query rules ... */
+}
+
+@media (max-width: 480px) {
+    .team-section {
+        padding: 30px 10px; /* Further reduced padding for small screens */
+    }
+    
+    .team-grid {
+        gap: 15px; /* Reduce gap between team members */
+    }
+    
+    /* ... rest of the existing media query rules ... */
+}
