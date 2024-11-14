@@ -1,8 +1,7 @@
 :root {
-    --primary-color: #0E459A;
-    --secondary-color: #FBDE4D;
-    --text-color: #333;
-    --white: #fff;
+    --brand-color: #0E459A;
+    --yellow-color: #FBDE4D;
+    --body-color: #e9faff;
 }
 
 * {
@@ -36,7 +35,7 @@ body {
 
 .hero-content h1 {
     font-size: 48px;
-    color: var(--primary-color);
+    color: var(--brand-color);
     margin-bottom: 20px;
 }
 
@@ -51,8 +50,8 @@ body {
 
 .read-more {
     padding: 12px 30px;
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--brand-color);
+    color: #fff;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -81,7 +80,7 @@ body {
 }
 
 .how-we-work span {
-    color: var(--primary-color);
+    color: var(--brand-color);
 }
 
 .steps-container {
@@ -99,7 +98,7 @@ body {
 }
 
 .step h3 {
-    color: var(--primary-color);
+    color: var(--brand-color);
     margin-bottom: 15px;
 }
 
@@ -150,7 +149,7 @@ body {
 }
 
 .service-item h3 {
-    color: var(--primary-color);
+    color: var(--brand-color);
     margin-bottom: 10px;
 }
 
@@ -186,8 +185,8 @@ body {
 
 .contact-btn {
     padding: 15px 40px;
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--brand-color);
+    color: #fff;
     border: none;
     border-radius: 25px;
     margin-top: 20px;

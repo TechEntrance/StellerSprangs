@@ -1,9 +1,17 @@
+/* Add CSS variables at the top, matching styles.css */
+:root {
+    --brand-color: #0E459A;
+    --yellow-color: #FBDE4D;
+    --body-color: #e9faff;
+}
+
 .hero-section {
     padding: 60px 20px;
     background: none;
     min-height: 80vh;
     display: flex;
     align-items: center;
+    background-color: var(--brand-color);
 }
 
 .hero-content {
@@ -21,7 +29,7 @@
 
 .text-content h1 {
     font-size: 42px;
-    color: #0e459a;
+    color: var(--brand-color);
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -41,16 +49,18 @@
 .read-more-btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #0e459a;
+    background-color: var(--brand-color);
     color: white;
     text-decoration: none;
     border-radius: 25px;
     margin-top: 20px;
     transition: background-color 0.3s ease;
+    color: var(--brand-color);
+    border: 2px solid var(--brand-color);
 }
 
 .read-more-btn:hover {
-    background-color: #0a3576;
+    background-color: var(--brand-color);
 }
 
 .image-content {
@@ -86,7 +96,7 @@
 }
 
 .steps-section h2 .blue-text {
-    color: #0e459a;
+    color: var(--brand-color);
 }
 
 .steps-section h2 .black-text {
@@ -127,7 +137,7 @@
 
 .step-box h3 {
     font-size: 24px;
-    color: #0e459a;
+    color: var(--brand-color);
     margin-bottom: 10px;
 }
 
@@ -153,7 +163,7 @@
 }
 
 .what-we-do-section h2 span:first-child {
-    color: #0e459a;
+    color: var(--brand-color);
 }
 
 .what-we-do-container {
@@ -224,7 +234,7 @@
 .benefits-section h2 {
     text-align: center;
     font-size: 32px;
-    color: #0e459a;
+    color: var(--brand-color);
     margin-bottom: 40px;
 }
 
@@ -293,13 +303,13 @@
 }
 
 .full-service-section h2 {
-    color: #24478C;
+    color: var(--brand-color);
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
 }
 
 .full-service-section h3 {
-    color: #24478C;
+    color: var(--brand-color);
     font-size: 1.8rem;
     margin: 2rem 0 1rem;
 }
@@ -324,7 +334,7 @@
 }
 
 .contact-prompt a {
-    color: #24478C;
+    color: var(--brand-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -333,7 +343,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #24478C;
+    background-color: var(--brand-color);
     color: #ffffff !important;
     width: 120px;
     height: 120px;

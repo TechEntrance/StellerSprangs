@@ -1,15 +1,14 @@
 /* Main Styles */
 :root {
-    --primary-color: #0E459A;
-    --secondary-color: #FBDE4D;
-    --text-color: #333333;
-    --light-bg: #FAFBFF;
+    --brand-color: #0E459A;
+    --yellow-color: #FBDE4D;
+    --body-color: #ffffff;
 }
 
 /* Hero Section */
 .hero-section {
     padding: 60px 20px;
-    background-color: var(--light-bg);
+    background-color: var(--body-color);
     background: none;
 }
 
@@ -27,13 +26,13 @@
 
 .text-content h1 {
     font-size: 42px;
-    color: var(--primary-color);
+    color: var(--brand-color);
     margin-bottom: 20px;
 }
 
 .text-content p {
     font-size: 18px;
-    color: var(--text-color);
+    color: #333;
     margin-bottom: 20px;
     line-height: 1.6;
 }
@@ -46,7 +45,7 @@
 .read-more-btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--primary-color);
+    background-color: var(--brand-color);
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -73,7 +72,7 @@
 .how-we-work h2 {
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #0056b3;
+    color: var(--brand-color);
 }
 
 .steps-container {
@@ -130,12 +129,12 @@
 /* What We Do Section */
 .what-we-do {
     padding: 60px 20px;
-    background-color: var(--light-bg);
+    background-color: var(--body-color);
 }
 
 .what-we-do h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--brand-color);
     font-size: 36px;
     margin-bottom: 40px;
 }
@@ -178,7 +177,7 @@
 
 .benefits h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--brand-color);
     font-size: 36px;
     margin-bottom: 40px;
 }
@@ -204,7 +203,7 @@
 /* Solutions Section */
 .solutions {
     padding: 60px 20px;
-    background-color: var(--light-bg);
+    background-color: var(--body-color);
 }
 
 .solution-content {
@@ -229,7 +228,7 @@
 }
 
 .contact-cta h2 {
-    color: var(--primary-color);
+    color: var(--brand-color);
     font-size: 36px;
     margin-bottom: 30px;
 }
@@ -237,7 +236,7 @@
 .contact-btn {
     display: inline-block;
     padding: 15px 40px;
-    background-color: var(--primary-color);
+    background-color: var(--brand-color);
     color: white;
     text-decoration: none;
     border-radius: 30px;
