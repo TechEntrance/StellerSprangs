@@ -19,25 +19,41 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         });
     });
+
+    // Slider functionality
+    const solutionCards = document.querySelectorAll('.solution-card');
+    const dots = document.querySelectorAll('.dot');
+    const cardsToShow = 3; // Number of cards to display at a time
+    let currentIndex = 0;
+
+    function showCards(index) {
+        const totalCards = solutionCards.length;
+        const totalDots = Math.ceil(totalCards / cardsToShow); // Calculate total dots based on cards
+
+        // Calculate the starting and ending indices for the visible cards
+        const startIndex = index * cardsToShow;
+        const endIndex = startIndex + cardsToShow;
+
+        // Show or hide cards based on their index
+        solutionCards.forEach((card, i) => {
+            card.style.display = (i >= startIndex && i < endIndex) ? 'block' : 'none';
+        });
+
+        // Update dots to reflect the current active dot
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    // Add click event to each dot
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index; // Update current index based on clicked dot
+            showCards(currentIndex); // Show the corresponding cards
+        });
+    });
+
+    // Initialize the first set of cards
+    showCards(currentIndex);
 });
 
-function handleScrollAnimations() {
-    const elements = document.querySelectorAll('.animate-on-scroll, .animate-feature');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    elements.forEach(element => {
-        observer.observe(element);
-    });
-}
-
-// Call the function when the page loads
-document.addEventListener('DOMContentLoaded', handleScrollAnimations);
