@@ -318,27 +318,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.category-item p {
+    margin-top: 5px;
+    font-size: 16px;
 }
 
 .number-box {
     width: 100px;
     height: 100px;
     background-color: #FFCE00;
-    border-radius: 10px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
     color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    margin-left: 200px;
 }
 
-.category-item p {
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-    max-width: 150px;
+.number-box:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: #FFD700;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .team-grid {
@@ -693,10 +701,48 @@ html {
     }
 }
 
-
 @media (max-width: 768px) {
     .team-section {
         padding: 40px; /* Reduced padding for medium screens */
     }
+}
+
+/* Add a keyframe animation for initial appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Apply the animation to the number boxes */
+.category-item {
+    animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation */
+    opacity: 0; /* Start hidden for animation */
+    animation-delay: 0.2s; /* Delay for staggered effect */
+}
+
+/* Adjust styles for category items to stack number boxes and team members */
+.category-item {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    margin-bottom: 40px; /* Space between each category */
+}
+
+/* Adjust the margin for the paragraph tag to reduce the gap */
+.category-item p {
+    margin-top: 15px; /* Decrease the gap between the number box and the paragraph */
+    font-size: 16px; /* Optional: Adjust font size if needed */
+    margin-left: 200px;
+}
+
+/* Ensure team member cards are centered below the number boxes */
+.team-member {
+    text-align: center; /* Center text for team members */
 }
 
